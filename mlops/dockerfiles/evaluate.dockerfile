@@ -11,7 +11,7 @@ COPY src/ src/
 COPY data/ data/
 COPY models/ models/
 COPY reports/ reports/
-RUN --mount=type=cache,target=~/pip/.cache pip install -r requirements.txt --no-cache-dir
+RUN --mount=type=cache,target=~/pip/.cache pip install -r requirements.txt --no-cache-dir --timeout=120 --index-url https://pypi.org/simple
 RUN pip install . --no-deps --no-cache-dir --verbose
 
-ENTRYPOINT ["python", "-u", "src/project1/train.py"]
+ENTRYPOINT ["python", "-u", "src/project1/evaluate.py"]

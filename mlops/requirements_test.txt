@@ -1,0 +1,4 @@
+project1==0.0.1
+project1.egg==info
+pytest==8.3.4
+torch==2.5.1
